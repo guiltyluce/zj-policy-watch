@@ -110,7 +110,7 @@ python3 scripts/policy_watch_zj.py \
 
 ## Skill 打包与安装
 
-生成可上传的 Skill zip：
+生成可分发的 Skill zip：
 
 ```bash
 python3 scripts/validate_skill_package.py --zip
