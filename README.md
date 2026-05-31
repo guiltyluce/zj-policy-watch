@@ -26,10 +26,12 @@
 │   ├── zj_policy_sources.json
 │   └── feishu_bitable_field_map.example.json
 ├── scripts/
-│   └── policy_watch_zj.py
+│   ├── policy_watch_zj.py
+│   └── validate_skill_package.py
 └── skill/
     └── zj-policy-watch/
-        └── SKILL.md
+        ├── SKILL.md
+        └── zj-policy-watch.zip
 ```
 
 ## 快速运行
@@ -106,16 +108,28 @@ python3 scripts/policy_watch_zj.py \
 
 也可以直接提供 `FEISHU_TENANT_ACCESS_TOKEN`。多维表字段名可以在 `config/feishu_bitable_field_map.example.json` 中调整。
 
-## Skill 安装
+## Skill 打包与安装
+
+生成可上传的 Skill zip：
+
+```bash
+python3 scripts/validate_skill_package.py --zip
+```
+
+生成文件：
+
+```text
+skill/zj-policy-watch/zj-policy-watch.zip
+```
 
 如果你的运行时支持本地 Skill 目录，可以复制 `skill/zj-policy-watch`：
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R skill/zj-policy-watch ~/.codex/skills/
+unzip -o skill/zj-policy-watch/zj-policy-watch.zip -d ~/.codex/skills/
 ```
 
-安装后，智能体在遇到“浙江政策监测”“杭州科技政策申报”“经信政策周报”“写入飞书多维表”等需求时，可以按 `SKILL.md` 中的流程调用脚本。请保留本仓库目录；Skill 负责说明调用方式，脚本和配置仍从仓库根目录读取。
+安装后，智能体在遇到“浙江政策监测”“杭州科技政策申报”“经信政策周报”“写入飞书多维表”等需求时，可以按 `SKILL.md` 中的流程调用脚本。
 
 ## 配置范围
 
