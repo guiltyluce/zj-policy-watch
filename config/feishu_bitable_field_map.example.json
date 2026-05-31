@@ -1,0 +1,11 @@
+{
+  "title": "标题",
+  "link": "链接",
+  "publish_date": "发布日期",
+  "region": "地区",
+  "department": "部门",
+  "source_name": "来源",
+  "source_type": "来源类型",
+  "query": "命中查询",
+  "captured_at": "抓取时间"
+}
